@@ -1,5 +1,6 @@
-package com.ctrip.hotel.model;
+package com.ctrip.hotel.model.hotel;
 
+import com.ctrip.hotel.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +18,10 @@ import javax.persistence.Table;
 @Getter
 @Entity
 @Table(name="t_hotel_ratingscore")
-public class HotelRatingScore {
-    @Id
+public class HotelRatingScore  extends BaseModel {
+    /**
+     * 酒店ID
+     */
     private Long hotelId;
     /**
      * 酒店入住点评用户ID

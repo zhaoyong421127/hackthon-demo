@@ -1,6 +1,6 @@
 package com.ctrip.hotel.service;
 
-import com.ctrip.hotel.model.Hotel;
+import com.ctrip.hotel.model.hotel.Hotel;
 
 /**
  * 酒店服务

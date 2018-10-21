@@ -1,6 +1,6 @@
 package com.ctrip.hotel.controller;
 
-import com.ctrip.hotel.model.Hotel;
+import com.ctrip.hotel.model.hotel.Hotel;
 import com.ctrip.hotel.service.IHotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

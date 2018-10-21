@@ -1,5 +1,6 @@
-package com.ctrip.hotel.model;
+package com.ctrip.hotel.model.hotel;
 
+import com.ctrip.hotel.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,10 +18,8 @@ import java.util.Date;
 @Getter
 @Entity
 @Table(name="t_hotel")
-public class Hotel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long hotelId;
+public class Hotel extends BaseModel {
+
     /**
      * 酒店名称
      */
@@ -36,15 +35,5 @@ public class Hotel {
     @Column(name="description")
     private String desc;
 
-    /**
-     * 创建时间
-     */
-    @Temporal(TemporalType.DATE)
-    private Date createTime;
 
-    /**
-     * 修改时间
-     */
-    @Temporal(TemporalType.DATE)
-    private Date updateTime;
 }

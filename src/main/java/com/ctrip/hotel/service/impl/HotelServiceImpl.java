@@ -1,10 +1,9 @@
 package com.ctrip.hotel.service.impl;
 
 import com.ctrip.hotel.dao.HotelRepository;
-import com.ctrip.hotel.model.Hotel;
+import com.ctrip.hotel.model.hotel.Hotel;
 import com.ctrip.hotel.service.IHotelService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
 
 /**

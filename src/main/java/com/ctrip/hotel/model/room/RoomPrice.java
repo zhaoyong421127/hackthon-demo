@@ -26,15 +26,12 @@ public class RoomPrice extends BaseModel {
     @Column(scale = 2)
     private BigDecimal roomPrice;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date effectDate;
 
-    private SaleChannel saleChannel;
-
     /**
-     * 售卖渠道
+     * 售卖渠道  CTRIP,B2B,QUNAR,ELONG
      */
-    private enum  SaleChannel {
-        CTRIP,B2B,QUNAR,ELONG
-    }
+    private String saleChannel;
+
 }

@@ -1,9 +1,9 @@
 package com.ctrip.hotel.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -11,24 +11,27 @@ import java.util.Date;
  * @description
  * @createtime 2018-10-2018/10/21 16:52
  */
+@Setter
+@Getter
+@MappedSuperclass
 public class BaseModel {
 
     /**
      * 数据表主键
      */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     /**
      * 创建时间
      */
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
     /**
      * 更新时间
      */
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 }

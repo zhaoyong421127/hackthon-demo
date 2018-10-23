@@ -5,6 +5,9 @@ import com.ctrip.hotel.model.hotel.Hotel;
 import com.ctrip.hotel.service.IHotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.List;
 
 /**
  * @author zhao.yong
@@ -18,6 +21,14 @@ public class HotelServiceImpl implements IHotelService {
     @Override
     public Hotel queryHotelById(Long hotelId) {
         return hotelRepository.findById(hotelId).get();
+    }
+
+    @Override
+    public List<Hotel> queryHotelList(String hotelName) {
+        if(StringUtils.isEmpty(hotelName)){
+            return (List<Hotel>) hotelRepository.findAll();
+        }
+        return hotelRepository.queryHotelsByHotelNameLike(hotelName);
     }
 
     @Override

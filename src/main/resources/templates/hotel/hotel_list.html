@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>黑客松比赛主题-低价酒店推荐</title>
+    <link th:href="@{/static/css/app.css}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+  <table id="hotel_tab">
+      <caption>精选酒店列表</caption>
+      <thead>
+          <tr>
+              <th>酒店ID</th>
+              <th>酒店名称</th>
+              <th>酒店星级</th>
+              <th>酒店所属城市</th>
+              <th>酒店描述</th>
+              <th>预订操作</th>
+          </tr>
+      </thead>
+
+      <tbody>
+
+          <tr th:each="hotel : ${hotels}" th:class="${hotelStat.odd} ? 'odd' : 'even'">
+              <td th:text="${hotel.id}"></td>
+              <td th:text="${hotel.hotelName}"></td>
+              <td th:text="${hotel.star}"></td>
+              <td th:text="${hotel.cityName}">北京</td>
+              <td th:text="${hotel.desc}"></td>
+              <td ><a th:href="@{/hotel/getHotel/{hotelId}(hotelId=${hotel.id})}">在线预订</a></td>
+          </tr>
+      </tbody>
+  </table>
+
+<div th:replace="~{footer::#foot-section}"></div>
+</body>
+</html>

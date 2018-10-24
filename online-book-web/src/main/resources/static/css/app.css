@@ -1,0 +1,126 @@
+*{margin: 0;padding: 0;}
+/**
+ 酒店页面样式
+ */
+#hotel_tab{
+    border: 1px solid #666;
+    border-collapse: collapse;
+    width: 100%;
+}
+#hotel_tab caption{
+    font-size: 2rem;
+    font-family: "黑体";
+    font-weight: bold;
+}
+#hotel_tab th{
+    background-color:  #ada5a5;
+    height: 2rem;
+    line-height: 2rem;
+}
+#hotel_tab th,#hotel_tab td{
+    border: 1px solid #a3bbe1;
+    text-align: center;
+}
+#hotel_tab tr:hover{
+    background-color: lightblue;
+}
+
+.hd_title{
+    text-align: center;
+}
+.hd_head p{
+    margin: 0.5rem 0;
+}
+.hd_head .hd_head_hl{
+    padding: 0.3rem 0.5rem;
+    background-color: #FF2288;
+    border-radius: 5px;
+    margin-right: 0.2rem;
+}
+.hd_head .hd_head_hn{
+    display: inline-block;
+    vertical-align: bottom;
+    font: bold 20px/22px "microsoft yahei",simsun;
+    color: #06c;
+}
+.hd_head .hd_head_ht div{
+    display: inline-block;
+    font-size: 0.8rem;
+}
+.ht_default{
+    border: 1px solid #7be;
+    color: #fff;
+    background-color: #7be;
+}
+.ht_odd{
+    border: 1px solid #ffcc89;
+    color: #ff9a14;
+    background-color: #fff;
+}
+.hd_head .hd_head_qp{
+    padding: 0.2rem 0.3rem;
+    background-color: #feedd5;
+    color: #ff9913;
+}
+.hd_body table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.hd_body table>thead>tr{
+    background-color: #ada5a5;
+}
+.hd_body .hd_tab_col th{
+    width: 13%;
+}
+
+.hd_body table>tbody tr{
+    border:1px solid #f5f9ff;
+    text-align: center;
+}
+.hd_body table .rn_col1{
+    width: 9%;
+}
+.hd_body table .rn_col2 td{
+    width: 13%;
+}
+.hd_body .s_rp{
+    font: normal 18px Tahoma;
+    color: #F60;
+}
+.hd_body .s_rn{
+    color: #06c;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.hd_body .r_b_btn{
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #fff;
+    background: #ff9a14;
+    border-radius: 5px 5px 0 0;
+    padding: 2px 25px;
+    border: 0;
+}
+.odd{
+    background-color: beige;
+}
+.even{
+    background-color: #f7f2f2;
+}
+
+/*
+* footer 部分
+*/
+#foot-section{
+    border: 1px solid;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0.5rem;
+    height: 5rem;
+    line-height: 5rem;
+    background: #5f5757;
+    font-size: 1.5rem;
+    color: #fff;
+}

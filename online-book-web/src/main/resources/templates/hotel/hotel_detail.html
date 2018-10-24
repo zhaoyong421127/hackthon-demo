@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店详情页</title>
+    <link th:href="@{/static/css/app.css}" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="hd_title">
+    <h3>酒店详情页</h3>
+</div>
+<hr/>
+<div class="hd_head">
+    <div>
+        <span th:text="${hotel.saleLevel}" class="hd_head_hl"/>
+        <span th:text="${hotel.hotelName}" class="hd_head_hn"></span>
+        <span th:text="${hotel.qualityPromise}" class="hd_head_qp"></span></div>
+    <div class="hd_head_ht">
+        <div th:each="ht : ${#strings.listSplit(hotel.hotelTitle,',')}" th:class="${htStat.count==1 ? 'ht_default': 'ht_odd'}">
+            <span th:text="${ht}"></span>
+        </div>
+    </div>
+</div>
+
+
+<div th:class="hd_body">
+    <table>
+        <thead>
+        <tr>
+            <th> 房型</th>
+            <th>
+                <table class="hd_tab_col">
+                    <tr>
+                        <th>价格类型</th>
+                        <th> 房价</th>
+                        <th> 床型</th>
+                        <th> 早餐</th>
+                        <th> 宽带</th>
+                        <th> 政策</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </table>
+            </th>
+
+        </tr>
+        </thead>
+
+
+      <tbody>
+        <tr th:each="roomInfo : ${roomInfos}">
+            <td class="rn_col1">
+                <img th:src="${roomInfo.room.roomImgUrl}" width="50px" height="50px">
+                <span class="s_rn" th:text="${roomInfo.room.roomName}"></span>
+            </td>
+
+            <td class="rn_col2">
+                <table>
+                    <tr th:each="price : ${roomInfo.roomPriceList}">
+                        <td th:text="${price.priceType}"></td>
+                        <td>
+                            <dfn>¥</dfn>
+                            <span th:text="${price.roomPrice}" class="s_rp"></span>
+                        </td>
+                        <td th:text="${price.bedType}"></td>
+                        <td th:text="${price.breakfast}"></td>
+                        <td th:text="${price.wireless}"></td>
+                        <td th:text="${price.policy}"></td>
+                        <td><button class="r_b_btn">预订</button></td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+      </tbody>
+        </table>
+
+</div>
+
+
+
+</body>
+</html>

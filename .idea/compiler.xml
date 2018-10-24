@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hackthon-game" />
+        <module name="basicdata-collector" />
+        <module name="online-book-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="basicdata-collector" target="1.7" />
       <module name="hackthon-game" target="1.8" />
+      <module name="online-book-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

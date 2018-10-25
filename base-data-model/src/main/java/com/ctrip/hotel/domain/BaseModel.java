@@ -1,4 +1,4 @@
-package com.ctrip.hotel.model.domain;
+package com.ctrip.hotel.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -27,11 +27,11 @@ public class BaseModel {
      * 创建时间
      */
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createTime;
+    public Date createTime;
 
     /**
      * 更新时间
      */
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updateTime;
+    public Date updateTime;
 }

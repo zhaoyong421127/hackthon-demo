@@ -6,6 +6,7 @@
   <modules>
     <module>basicdata-collector</module>
     <module>online-book-web</module>
+    <module>base-data-model</module>
   </modules>
 
   <parent>

@@ -11,7 +11,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
  *
  */
 @SpringBootApplication
-@EntityScan("com.ctrip.hotel.model")
+@EntityScan("com.ctrip.hotel.domain")
 @EnableJpaRepositories
 @EnableWebFlux
 public class App 

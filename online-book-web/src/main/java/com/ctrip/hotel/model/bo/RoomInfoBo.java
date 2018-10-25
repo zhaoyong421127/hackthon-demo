@@ -1,7 +1,7 @@
 package com.ctrip.hotel.model.bo;
 
-import com.ctrip.hotel.model.domain.room.Room;
-import com.ctrip.hotel.model.domain.room.RoomPrice;
+import com.ctrip.hotel.domain.room.Room;
+import com.ctrip.hotel.domain.room.RoomPrice;
 import lombok.Getter;
 import lombok.Setter;
 

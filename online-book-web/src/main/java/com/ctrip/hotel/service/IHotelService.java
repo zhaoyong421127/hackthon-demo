@@ -1,6 +1,7 @@
 package com.ctrip.hotel.service;
 
-import com.ctrip.hotel.model.domain.hotel.Hotel;
+
+import com.ctrip.hotel.domain.hotel.Hotel;
 
 import java.util.List;
 

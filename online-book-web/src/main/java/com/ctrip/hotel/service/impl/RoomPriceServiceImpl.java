@@ -1,7 +1,7 @@
 package com.ctrip.hotel.service.impl;
 
 import com.ctrip.hotel.dao.RoomPriceRepository;
-import com.ctrip.hotel.model.domain.room.RoomPrice;
+import com.ctrip.hotel.domain.room.RoomPrice;
 import com.ctrip.hotel.service.IRoomPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

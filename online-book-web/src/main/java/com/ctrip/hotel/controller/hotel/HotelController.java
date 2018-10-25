@@ -1,16 +1,18 @@
 package com.ctrip.hotel.controller.hotel;
 
-import com.ctrip.hotel.dao.HotelRepository;
-import com.ctrip.hotel.model.bo.HotelDetailBo;
+import com.ctrip.hotel.domain.hotel.Hotel;
+import com.ctrip.hotel.domain.room.RoomPrice;
 import com.ctrip.hotel.model.bo.RoomInfoBo;
-import com.ctrip.hotel.model.domain.hotel.Hotel;
-import com.ctrip.hotel.model.domain.room.RoomPrice;
+
 import com.ctrip.hotel.service.IHotelService;
 import com.ctrip.hotel.service.IRoomPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;

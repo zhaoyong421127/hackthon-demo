@@ -1,6 +1,6 @@
-package com.ctrip.hotel.model.domain.room;
+package com.ctrip.hotel.domain.room;
 
-import com.ctrip.hotel.model.domain.BaseModel;
+import com.ctrip.hotel.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 

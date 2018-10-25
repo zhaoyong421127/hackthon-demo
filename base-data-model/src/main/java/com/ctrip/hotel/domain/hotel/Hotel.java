@@ -1,12 +1,14 @@
-package com.ctrip.hotel.model.domain.hotel;
+package com.ctrip.hotel.domain.hotel;
 
-import com.ctrip.hotel.model.domain.BaseModel;
-import com.ctrip.hotel.model.domain.room.Room;
+import com.ctrip.hotel.domain.BaseModel;
+import com.ctrip.hotel.domain.room.Room;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+
+
 
 /**
  * 酒店数据
@@ -20,9 +22,17 @@ import java.util.List;
 public class Hotel extends BaseModel {
 
     /**
+     * 母酒店ID
+     */
+    public Long masterHotelId;
+    /**
      * 酒店名称
      */
     public String hotelName;
+    /**
+     * 酒店英文名
+     */
+    public String hotelEname;
     /**
      * 酒店星级
      */

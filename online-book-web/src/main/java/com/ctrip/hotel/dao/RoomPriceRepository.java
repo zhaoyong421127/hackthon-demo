@@ -1,6 +1,6 @@
 package com.ctrip.hotel.dao;
 
-import com.ctrip.hotel.model.domain.room.RoomPrice;
+import com.ctrip.hotel.domain.room.RoomPrice;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Date;

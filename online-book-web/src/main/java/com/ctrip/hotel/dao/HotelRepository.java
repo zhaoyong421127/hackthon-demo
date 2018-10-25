@@ -1,12 +1,8 @@
 package com.ctrip.hotel.dao;
 
-import com.ctrip.hotel.model.bo.HotelDetailBo;
-import com.ctrip.hotel.model.domain.hotel.Hotel;
-import org.springframework.data.jpa.repository.Query;
+import com.ctrip.hotel.domain.hotel.Hotel;
 import org.springframework.data.repository.CrudRepository;
 
-import javax.persistence.OneToMany;
-import java.util.Date;
 import java.util.List;
 
 /**

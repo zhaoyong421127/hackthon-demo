@@ -22,20 +22,22 @@ public class ContinusStayRoomPrice extends BaseModel{
 
     public Long hotelId;
 
-    public Integer cityId;
-
     public Long masterHotelId;
 
     public String hotelName;
+
     public Long roomId;
+
     public Integer star;
+
     @Temporal(TemporalType.DATE)
     public Date effectDate;
+
     public Integer persons;
+
     @Column(scale = 2)
     public BigDecimal stayPrice;
-    @Column(scale = 2)
-    public BigDecimal stayCostPrice;
+
     public Integer stayDays;
 
 }

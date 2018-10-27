@@ -1,11 +1,14 @@
 package com.ctrip.hotel.domain.hotel;
 
 import com.ctrip.hotel.domain.BaseModel;
+import com.ctrip.hotel.domain.room.ContinusStayRoomPrice;
 import com.ctrip.hotel.domain.room.Room;
+import com.ctrip.hotel.domain.room.RoomPrice;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -77,4 +80,13 @@ public class Hotel extends BaseModel {
 
         return hotel.masterHotelId.equals(this.masterHotelId) && hotel.id.equals(this.id);
     }
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "hotelId")
+    public List<RoomPrice> roomPriceList;
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "hotelId")
+    public List<ContinusStayRoomPrice> continusStayRoomPriceList;
+
+    public BigDecimal minPrice;
+
 }

@@ -17,4 +17,6 @@ public interface IHotelService {
     List<Hotel> queryHotelList(String hotelName);
 
     Hotel saveHotel(Hotel hotel);
+
+    List<Hotel> queryHotelByIds(List<Long> ids);
 }

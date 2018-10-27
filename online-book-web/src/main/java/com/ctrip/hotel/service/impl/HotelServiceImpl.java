@@ -4,9 +4,13 @@ import com.ctrip.hotel.dao.HotelRepository;
 import com.ctrip.hotel.domain.hotel.Hotel;
 import com.ctrip.hotel.service.IHotelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -26,7 +30,9 @@ public class HotelServiceImpl implements IHotelService {
     @Override
     public List<Hotel> queryHotelList(String hotelName) {
         if(StringUtils.isEmpty(hotelName)){
-            return (List<Hotel>) hotelRepository.findAll();
+            PageRequest pageable = PageRequest.of(0,100);
+             Page<Hotel> pages =  hotelRepository.findAll(pageable);
+             return pages.getContent();
         }
         return hotelRepository.queryHotelsByHotelNameLike(hotelName);
     }
@@ -34,5 +40,14 @@ public class HotelServiceImpl implements IHotelService {
     @Override
     public Hotel saveHotel(Hotel hotel) {
         return hotelRepository.save(hotel);
+    }
+
+    @Override
+    public List<Hotel> queryHotelByIds(List<Long> ids) {
+        return (List<Hotel>) hotelRepository.findAllById(ids);
+    }
+
+    public List<Hotel> queryAllHotels(){
+        return (List<Hotel>) hotelRepository.findAll();
     }
 }

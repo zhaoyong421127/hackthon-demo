@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/base-data-model/base-data-model.iml" filepath="$PROJECT_DIR$/base-data-model/base-data-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-data-model/base-data-model.iml" filepath="$PROJECT_DIR$/base-data-model/base-data-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/basicdata-collector/basicdata-collector.iml" filepath="$PROJECT_DIR$/basicdata-collector/basicdata-collector.iml" />
       <module fileurl="file://$PROJECT_DIR$/online-book-web/online-book-web.iml" filepath="$PROJECT_DIR$/online-book-web/online-book-web.iml" />
     </modules>

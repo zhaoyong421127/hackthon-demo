@@ -4,17 +4,21 @@ import com.ctrip.hotel.domain.hotel.Hotel;
 import com.ctrip.hotel.domain.room.RoomPrice;
 import com.ctrip.hotel.model.bo.RoomInfoBo;
 
+import com.ctrip.hotel.service.IHotelRecomendService;
 import com.ctrip.hotel.service.IHotelService;
 import com.ctrip.hotel.service.IRoomPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,6 +37,9 @@ public class HotelController {
     private IHotelService hotelService;
     @Autowired
     private IRoomPriceService roomPriceService;
+
+    @Autowired
+    private IHotelRecomendService hotelRecomendService;
 
     @RequestMapping("/getHotelById/{hotelId}")
     @ResponseBody
@@ -82,6 +89,22 @@ public class HotelController {
     @PostMapping("/saveHotel")
     public Hotel saveHotel(Hotel hotel){
         return hotelService.saveHotel(hotel);
+    }
+
+
+    /**
+     *
+     * 功能描述: 低价结果-阶段一
+     */
+
+    @PostMapping("/hotelSortByPrice")
+    public ModelAndView hotelSortByPrice(String startDate,String endDate) throws ParseException {
+        if(StringUtils.isEmpty(startDate)||StringUtils.isEmpty(endDate)){
+            return new ModelAndView("hotel/hotel_list","hotels",null);
+        }
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        List<Hotel> hotels = hotelRecomendService.getHotelsByPrice( sf.parse(startDate),  sf.parse(endDate), 0, 100);
+        return new ModelAndView("hotel/hotel_list","hotels",hotels);
     }
 
 }

@@ -7,7 +7,13 @@
 </head>
 
 <body>
-  <table id="hotel_tab">
+    <form action="/hotel/hotelSortByPrice" method="post">
+        入住日期：<input id="startDate" name="startDate" type="date"/>
+        离店日期：<input id="endDate" name="endDate" type="date"/>
+        <input type="submit"/>
+    </form>
+
+    <table id="hotel_tab">
       <caption>精选酒店列表</caption>
       <thead>
           <tr>
@@ -16,6 +22,7 @@
               <th>酒店星级</th>
               <th>酒店所属城市</th>
               <th>酒店描述</th>
+              <th>最低房价</th>
               <th>预订操作</th>
           </tr>
       </thead>
@@ -28,6 +35,7 @@
               <td th:text="${hotel.star}"></td>
               <td th:text="${hotel.cityName}">北京</td>
               <td th:text="${hotel.desc}"></td>
+              <td th:text="${hotel.minPrice}"></td>
               <td ><a th:href="@{/hotel/getHotel/{hotelId}(hotelId=${hotel.id})}">在线预订</a></td>
           </tr>
       </tbody>

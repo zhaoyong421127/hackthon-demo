@@ -58,6 +58,10 @@ public class Hotel extends BaseModel {
     public String qualityPromise;
 
     /**
+     * 城市ID
+     */
+    public Integer cityId;
+    /**
      * 酒店描述
      */
     @Column(name="description")
@@ -67,5 +71,10 @@ public class Hotel extends BaseModel {
     public List<Room> roomList;
 
 
+    @Override
+    public boolean equals(Object obj) {
+        Hotel hotel = (Hotel) obj;
 
+        return hotel.masterHotelId.equals(this.masterHotelId) && hotel.id.equals(this.id);
+    }
 }

@@ -21,15 +21,31 @@ public class RoomPrice extends BaseModel {
 
     public Long hotelId;
 
+    public String hotelName;
+
+    public Long masterHotelId;
+
+    public Integer cityId;
+
+    public Integer star;
+
     public Long roomId;
 
     /**
-     * 价格类型
+     * 售卖价
      */
-    public String priceType;
-
     @Column(scale = 2)
     public BigDecimal roomPrice;
+
+    /**
+     * 成本价
+     */
+    public BigDecimal costPrice;
+
+    /**
+     * 入住人数
+     */
+    public Integer persons;
 
     @Temporal(TemporalType.DATE)
     public Date effectDate;

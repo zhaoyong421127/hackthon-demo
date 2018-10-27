@@ -20,7 +20,7 @@ public class BaseModel {
      * 数据表主键
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     /**

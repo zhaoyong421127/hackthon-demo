@@ -39,8 +39,9 @@ public class DataCollectorService {
             Workbook workbook = WorkbookFactory.create(is);
             Sheet sheet = workbook.getSheetAt(0);
             int lastRowNum = sheet.getLastRowNum();
-
-            for(int i = 1;i<= lastRowNum;i++){
+            Row row = sheet.getRow(0);
+            System.out.println(row.getCell(0).getNumericCellValue());
+           /* for(int i = 1;i<= lastRowNum;i++){
                 Hotel hotel = new Hotel();
                 Row row = sheet.getRow(i);
                 Double hotelId = row.getCell(0).getNumericCellValue();
@@ -54,13 +55,13 @@ public class DataCollectorService {
                 hotel.createTime = new Date();
                 hotel.updateTime = new Date();
                 hotels.add(hotel);
-            }
+            }*/
 
             workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        hotelRepository.saveAll(hotels);
+        //hotelRepository.saveAll(hotels);
 
         return hotels.size();
     }

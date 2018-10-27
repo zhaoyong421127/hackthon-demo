@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/online-book-web/pom.xml" />
         <option value="$PROJECT_DIR$/basicdata-collector/pom.xml" />
+        <option value="$PROJECT_DIR$/base-data-model/pom.xml" />
       </list>
     </option>
   </component>

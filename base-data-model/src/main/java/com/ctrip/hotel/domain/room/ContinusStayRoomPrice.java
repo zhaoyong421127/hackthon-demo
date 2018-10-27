@@ -22,6 +22,8 @@ public class ContinusStayRoomPrice extends BaseModel{
 
     public Long hotelId;
 
+    public Integer cityId;
+
     public Long masterHotelId;
 
     public String hotelName;
@@ -32,6 +34,8 @@ public class ContinusStayRoomPrice extends BaseModel{
     public Integer persons;
     @Column(scale = 2)
     public BigDecimal stayPrice;
+    @Column(scale = 2)
+    public BigDecimal stayCostPrice;
     public Integer stayDays;
 
 }

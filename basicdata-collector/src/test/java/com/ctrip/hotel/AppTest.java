@@ -24,54 +24,73 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void loadInitData() throws InterruptedException {
+    public void loadInitData() throws Exception {
 
-        CountDownLatch cdh = new CountDownLatch(3);
-        new Thread(()->{
+       // CountDownLatch cdh = new CountDownLatch(1);
+       /* new Thread(()->{
             int ret = dataCollectorService.excelDataImportHotel("data/star3-10.15-10.31-roomprice.xlsx");
             System.out.println("导入数据大小:"+ret);
             cdh.countDown();
-        });
-        new Thread(()->{
-            int ret = dataCollectorService.excelDataImportHotel("data/star4-10.15-10.31-roomprice.xlsx");
-            System.out.println("导入数据大小:"+ret);
+        }).start();*/
+
+        int ret = dataCollectorService.excelDataImportHotel("data/star4-10.15-10.31-roomprice.xlsx");
+        System.out.println("导入数据大小:"+ret);
+    /*    new Thread(()->{
+
             cdh.countDown();
-        });
-        new Thread(()->{
+        }).start();*/
+      /*  new Thread(()->{
            int ret1 = dataCollectorService.excelDataImportHotel("data/star5-6-10.15-10.31-roomprice.xlsx");
 
            cdh.countDown();
-        }).start();
+        }).start();*/
 
-        cdh.await();
+        //cdh.await();
 
     }
 
 
     @Test
     public void loadRoomPrice() throws InterruptedException {
-        CountDownLatch cdh = new CountDownLatch(3);
+        CountDownLatch cdh = new CountDownLatch(5);
+
         new Thread(()->{
 
             dataCollectorService.excelDataImportRoomPrice("data/star3-11.01-11.15-roomprice.xlsx");
             cdh.countDown();
-        });
+        }).start();
         new Thread(()->{
 
             dataCollectorService.excelDataImportRoomPrice("data/star4-10.15-10.31-roomprice.xlsx");
             cdh.countDown();
-        });
+        }).start();
         new Thread(()->{
             dataCollectorService.excelDataImportRoomPrice("data/star4-11.01-11.15-roomprice.xlsx");
             cdh.countDown();
-        });
+        }).start();
+
+        new Thread(()->{
+
+            dataCollectorService.excelDataImportRoomPrice("data/star5-6-10.15-10.31-roomprice.xlsx");
+            cdh.countDown();
+        }).start();
+        new Thread(()->{
+            dataCollectorService.excelDataImportRoomPrice("data/star5-6-11.01-11.15-roomprice.xlsx");
+            cdh.countDown();
+        }).start();
         cdh.await();
         System.out.println("导致房价成功!");
     }
 
     @Test
-    public void loadStayRoomPrice(){
-        CountDownLatch cdh = new CountDownLatch(3);
+    public void loadStayRoomPrice() throws Exception {
+        CountDownLatch cdh = new CountDownLatch(1);
+        new Thread(()->{
+            dataCollectorService.excelDataImportStayRoomPrice("data/more-day-roomprice/star3-11.01-11.15-roomprice1.xlsx");
+            cdh.countDown();
+        }).start();
 
+        cdh.await();
+        System.out.println("导入成功！");
     }
 }

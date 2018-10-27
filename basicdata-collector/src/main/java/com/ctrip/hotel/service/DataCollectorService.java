@@ -67,7 +67,7 @@ public class DataCollectorService {
     }
 
     public  void excelDataImportRoom(){
-
+        InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("data/RoomPrice(sample).xlsx");
     }
 
     public  void excelDataImportRoomPrice(){
